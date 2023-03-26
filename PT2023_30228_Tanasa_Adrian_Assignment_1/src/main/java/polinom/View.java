@@ -24,7 +24,7 @@ public class View extends JFrame {
         this.prepareGui();
     }
 
-    public void prepareGui(){
+    public void prepareGui() {
         this.setSize(500, 500);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.contentPane = new JPanel(new GridLayout(2, 2));
@@ -35,7 +35,7 @@ public class View extends JFrame {
 
     private void prepareResultPanel() {
         this.resultPanel = new JPanel();
-        this.resultPanel.setLayout(new GridLayout(1,1));
+        this.resultPanel.setLayout(new GridLayout(1, 1));
         this.resultLabel = new JLabel("Result", JLabel.CENTER);
         this.resultValueLabel = new JLabel("", JLabel.CENTER);
         this.resultPanel.add(this.resultLabel);

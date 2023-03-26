@@ -31,7 +31,8 @@ public class Polynomial {
         }
         return new Polynomial(result);
     }
-//.............................scadere..................................
+
+    //.............................scadere..................................
     public Polynomial subtract(Polynomial other) {
         Map<Integer, Float> result = new HashMap<>(this.polynomialValues);
         for (Map.Entry<Integer, Float> entry : other.polynomialValues.entrySet()) {
@@ -42,13 +43,14 @@ public class Polynomial {
         }
         return new Polynomial(result);
     }
-//.........................inmultire.............................................
+
+    //.........................inmultire.............................................
     public Polynomial multiply(Polynomial other) {
         Map<Integer, Float> result = new HashMap<>();
         for (Map.Entry<Integer, Float> entry : this.polynomialValues.entrySet()) {
             for (Map.Entry<Integer, Float> entry2 : other.polynomialValues.entrySet()) {
 
-                int exponent = entry.getKey() +entry2.getKey();
+                int exponent = entry.getKey() + entry2.getKey();
                 float constant = entry.getValue() * entry2.getValue();
 
                 Float newValue = result.getOrDefault(exponent, 0f) + constant;
@@ -57,18 +59,18 @@ public class Polynomial {
         }
         return new Polynomial(result);
     }
-//..........................impartire??..........................................
+
+    //..........................impartire??..........................................
     public Polynomial division(Polynomial other) {
         //TODO change to use float
         return null;
     }
-//.........................derivare.............................................
+
+    //.........................derivare.............................................
     public Polynomial derivative() {
         Map<Integer, Float> result = new HashMap<>();
-        for (Map.Entry<Integer, Float> entry : this.polynomialValues.entrySet())
-        {
-            if( entry.getKey() != 0)
-            {
+        for (Map.Entry<Integer, Float> entry : this.polynomialValues.entrySet()) {
+            if (entry.getKey() != 0) {
                 Float newConstantD = entry.getValue() * entry.getKey();
                 Integer newExponentD = entry.getKey() - 1;
                 result.put(newExponentD, newConstantD);
@@ -77,13 +79,13 @@ public class Polynomial {
         }
         return new Polynomial(result);
     }
-//.....................integrare.........................................
+
+    //.....................integrare.........................................
     public Polynomial integrate() {
         Map<Integer, Float> result = new HashMap<>();
-        for (Map.Entry<Integer, Float> entry : this.polynomialValues.entrySet())
-        {
+        for (Map.Entry<Integer, Float> entry : this.polynomialValues.entrySet()) {
             if (entry.getValue() != 0)  // x^n = (x^(n+1))/
-                                                // (n+1)
+            // (n+1)
             {
                 Float newConstantI = entry.getValue() / (entry.getKey() + 1);
                 Integer newExponentI = entry.getKey() + 1;
@@ -117,8 +119,8 @@ public class Polynomial {
     }
 
     private String getConstantString(float constant) {
-        if(constant == (int) constant) //daca constanta e nr intreg nu afisa partea fractionala
-            return String.format("%d",(int)constant);
+        if (constant == (int) constant) //daca constanta e nr intreg nu afisa partea fractionala
+            return String.format("%d", (int) constant);
         else
             return String.valueOf(constant);
     }

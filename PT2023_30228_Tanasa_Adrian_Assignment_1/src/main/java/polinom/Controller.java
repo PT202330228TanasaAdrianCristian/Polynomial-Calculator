@@ -26,7 +26,7 @@ public class Controller implements ActionListener {
                 case "Subtract" -> result = p1.subtract(p2);
                 case "Multiply" -> result = p1.multiply(p2);
                 case "Integrate" -> result = p1.integrate();
-                case "Derivative"-> result = p1.derivative();
+                case "Derivative" -> result = p1.derivative();
                 default -> result = new Polynomial(Collections.emptyMap());
             }
             view.getResultValueLabel().setText(String.valueOf(result));
@@ -62,8 +62,8 @@ public class Controller implements ActionListener {
             } else {
                 String[] mono = monomial.split("x\\^"); //trebuie \\ pt ca ^ e caracter special in regex
                 float newConstant = Float.parseFloat(mono[0]);
-                int newExponent =Integer.parseInt(mono[1]);
-                polynomialValues.put(newExponent,newConstant);
+                int newExponent = Integer.parseInt(mono[1]);
+                polynomialValues.put(newExponent, newConstant);
             }
         }
     }
