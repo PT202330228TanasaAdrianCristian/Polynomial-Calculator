@@ -16,7 +16,7 @@ public class Controller implements ActionListener {
 
     public void actionPerformed(ActionEvent e) {
         String command = e.getActionCommand();
-        if (command == "COMPUTE") {
+        if (command.equals("COMPUTE")) {
             Polynomial p1 = parsePolynomial(view.getFirstNumberTextField().getText());
             Polynomial p2 = parsePolynomial(view.getSecondNumberTextField().getText());
             String operation = String.valueOf(view.getOperationsComboBox().getSelectedItem());
@@ -25,6 +25,8 @@ public class Controller implements ActionListener {
                 case "Add" -> result = p1.add(p2);
                 case "Subtract" -> result = p1.subtract(p2);
                 case "Multiply" -> result = p1.multiply(p2);
+                case "Integrate" -> result = p1.integrate();
+                case "Derivative"-> result = p1.derivative();
                 default -> result = new Polynomial(Collections.emptyMap());
             }
             view.getResultValueLabel().setText(String.valueOf(result));

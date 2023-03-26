@@ -56,7 +56,7 @@ public class View extends JFrame {
         this.numbersPanel.add(secondNumberTextField);
         this.operationsLabel = new JLabel("Select operation", JLabel.CENTER);
         this.numbersPanel.add(this.operationsLabel);
-        String[] operations = new String[]{"Add", "Subtract", "Multiply"};
+        String[] operations = new String[]{"Add", "Subtract", "Multiply", "Integrate", "Derivative"};
         this.operationsComboBox = new JComboBox(operations);
         this.numbersPanel.add(operationsComboBox);
         this.computeButton = new JButton("Compute");
