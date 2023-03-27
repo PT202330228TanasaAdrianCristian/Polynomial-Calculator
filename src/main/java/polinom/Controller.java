@@ -36,7 +36,7 @@ public class Controller implements ActionListener {
 //    "2-2x+4x^3"  -> "~-2~-2x~+4x^3" -> ["2", "", "x^3"] ->
 
     private Polynomial parsePolynomial(String text) {
-        Map<Integer, Float> polynomialValues = new HashMap<>();
+        Map<Integer, Double> polynomialValues = new HashMap<>();
         text = text.replace("+", "~+");
         text = text.replace("-", "~-");
         String[] monomials = text.split("~");
@@ -46,22 +46,22 @@ public class Controller implements ActionListener {
         return new Polynomial(polynomialValues);
     }
 
-    private static void parseMonomial(String monomial, Map<Integer, Float> polynomialValues) {
+    private static void parseMonomial(String monomial, Map<Integer, Double> polynomialValues) {
         if (monomial.isEmpty()) { //daca incepe cu minus primul String va fi "" si trebuie sa trecem la urmatorul
             return;
         }
         if (!monomial.contains("x")) {
-            float newConstant = Float.parseFloat(monomial);
+            Double newConstant = Double.parseDouble(monomial);
             polynomialValues.put(0, newConstant);
         } else {
             if (!monomial.contains("^")) {
                 String constantString = monomial.replace("x", "");
                 // TODO sa gestionez cazul in care monomul e doar "x" ca da empty string acum
-                float newConstant = Float.parseFloat(constantString);
+                Double newConstant = Double.parseDouble(constantString);
                 polynomialValues.put(1, newConstant);
             } else {
                 String[] mono = monomial.split("x\\^"); //trebuie \\ pt ca ^ e caracter special in regex
-                float newConstant = Float.parseFloat(mono[0]);
+                Double newConstant = Double.parseDouble(mono[0]);
                 int newExponent = Integer.parseInt(mono[1]);
                 polynomialValues.put(newExponent, newConstant);
             }

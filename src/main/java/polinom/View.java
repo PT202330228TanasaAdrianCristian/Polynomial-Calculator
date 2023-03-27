@@ -59,7 +59,7 @@ public class View extends JFrame {
         String[] operations = new String[]{"Add", "Subtract", "Multiply", "Integrate", "Derivative"};
         this.operationsComboBox = new JComboBox(operations);
         this.numbersPanel.add(operationsComboBox);
-        this.computeButton = new JButton("Compute");
+        this.computeButton = new JButton("Calculate");
         this.computeButton.setActionCommand("COMPUTE");
         this.computeButton.addActionListener(this.controller);
         this.numbersPanel.add(this.computeButton);
