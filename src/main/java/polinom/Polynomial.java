@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class Polynomial {
 
-    private final Map<Integer, Double> polynomialValues;
+    private Map<Integer, Double> polynomialValues;
 
     public Polynomial(Map<Integer, Double> polynomialValues) {
         this.polynomialValues = polynomialValues;
@@ -16,10 +16,7 @@ public class Polynomial {
 
     // for (int i = 0; i < collection.size(); i++) { var name = collection.get(i); do something }
 
-    // 2 +      3x^2                 p1
-    //     5x + 7x^2 + 8x^3          p2
 
-    // 2 + 5x + 10x^2 + 8x^3        p1.add(p2)
     //.....................adunare..............................................................................
     public Polynomial add(Polynomial other) {
         Map<Integer, Double> result = new HashMap<>(this.polynomialValues);
@@ -62,7 +59,7 @@ public class Polynomial {
 
     //..........................impartire??..........................................
     public Polynomial division(Polynomial other) {
-        //TODO change to use Double
+        //TODO idk
         return null;
     }
 

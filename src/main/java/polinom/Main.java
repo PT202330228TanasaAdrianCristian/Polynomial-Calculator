@@ -8,6 +8,7 @@ public class Main {
         JFrame frame = new View("Polynomial calculator");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
+
     }
 }
 
